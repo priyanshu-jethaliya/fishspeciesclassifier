@@ -48,5 +48,5 @@ To run the web application locally, follow these steps:
 
 4. Install the required dependencies from the `requirements.txt` file:
 
-   
+   ```bash
    pip install -r requirements.txt
