@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 import joblib
+import os
 
 app = Flask(__name__, static_folder='static')
 
@@ -36,4 +37,6 @@ def predict():
     return jsonify({'species': species})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Use the PORT environment variable if available, otherwise use 5000 (local development)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
